@@ -1,0 +1,127 @@
+{% extends 'calculator/base.html' %}
+
+
+
+{% block content %}
+<style>
+    body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FEFDED;
+            color: #333;
+        }
+
+    nav {
+            background-color: #A1C398;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+    nav a {
+            color: #FEFDED;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+    nav a:hover {
+            color: #FA7070;
+        }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    form {
+        margin-bottom: 20px;
+    }
+
+    label {
+        margin-top: 10px;
+        display: block;
+    }
+
+    input,
+    select,
+    button {
+        width: calc(100% - 16px);
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #C6EBC5;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #FA7070;
+        color: #FEFDED;
+        font-weight: bold;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: block;
+        margin: 10px auto;
+    }
+
+    button:hover {
+        background-color: #C6EBC5;
+    }
+
+    h2 {
+        margin: 20px 0;
+        color: #333;
+    }
+
+    h3 {
+        color: #FA7070;
+    }
+
+    img {
+        max-width: 100px;
+        border-radius: 4px;
+        margin-top: 10px;
+    }
+
+    div {
+        border: 1px solid #C6EBC5;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+    }
+
+    p {
+        color: #333;
+    }
+</style>
+
+<div class="container">
+    <form method="get" action=".">
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+
+    {% if products %}
+    <h2>Search Results</h2>
+    {% for product in products %}
+    <div>
+        <h3>{{ product.product_name }}</h3>
+        <img src="{{ product.image_front_small_url }}" alt="{{ product.product_name }}">
+        <p>Ingredients: {{ product.ingredients_text }}</p>
+        <!-- More details -->
+    </div>
+    {% endfor %}
+    {% elif error %}
+    <p>{{ error }}</p>
+    {% endif %}
+</div>
+{% endblock %}

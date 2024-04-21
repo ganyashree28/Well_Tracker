@@ -1,0 +1,108 @@
+{% extends 'calculator/base.html' %}
+
+{% block content %}
+<div class="signup-container">
+    <h2>Sign up</h2>
+    <form method="post" class="signup-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="signup-button">Sign up</button>
+    </form>
+</div>
+
+<style>
+    body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FEFDED;
+            color: #333;
+        }
+    
+    nav {
+            background-color: #A1C398;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+    nav a {
+            color: #FEFDED;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+    nav a:hover {
+            color: #FA7070;
+        }
+
+    h1 {
+            color: #FA7070;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+    h2 {
+            color: #FA7070;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+    .signup-container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .signup-form p {
+        margin-bottom: 15px;
+    }
+
+    input[type='text'],
+    input[type='password'],
+    input[type='email'],
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+        /* Added for proper padding calculation */
+    }
+
+    .signup-button {
+        padding: 10px 20px;
+        background-color: #FA7070;
+        /* A green similar to the calculate button */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        /* Ensures the button width is properly calculated */
+    }
+
+    .signup-button:hover {
+        background-color: #C6EBC5;
+        /* A slightly darker green for hover effect */
+    }
+
+    form p {
+        text-align: left;
+    }
+
+    .errorlist {
+        color: red;
+        text-align: left;
+    }
+</style>
+{% endblock %}

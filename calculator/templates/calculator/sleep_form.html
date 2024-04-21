@@ -1,0 +1,123 @@
+<!-- templates/calculator/sleep_form.html -->
+<!-- sleep_form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FEFDED;
+            color: #333;
+        }
+
+        nav {
+            background-color: #A1C398;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #FEFDED;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FA7070;
+        }
+
+        h1 {
+            color: #FA7070;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            max-width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            margin-top: 10px;
+            display: block;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #C6EBC5;
+            border-radius: 4px;
+            box-sizing: border-box;
+            /* Added to include padding in width */
+        }
+
+        input[type="submit"] {
+            background-color: #FA7070;
+            color: #FEFDED;
+            font-weight: bold;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #C6EBC5;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'page1' %}">Body Fat</a>
+        <a href="{% url 'water_intake' %}">Water Intake</a>
+        <a href="{% url 'product_search' %}">Product Search</a>
+        <a href="{% url 'sleep_calculator' %}">Sleep Calculator</a>
+    </nav>
+    <h1>Track Your Sleep Cycle</h1>
+
+    <div class="container">
+        
+        <form method="post" action="{% url 'sleep_calculator' %}">
+            {% csrf_token %}
+            <div>
+                <label for="hour">Hour:</label>
+                {{ form.hour }}
+            </div>
+            <div>
+                <label for="minute">Minute:</label>
+                {{ form.minute }}
+            </div>
+            <div>
+                <label for="meridiem">AM/PM:</label>
+                {{ form.meridiem }}
+            </div>
+            <input type="submit" value="Calculate">
+        </form>
+    </div>
+
+</body>
+
+</html>

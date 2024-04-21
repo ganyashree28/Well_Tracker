@@ -1,0 +1,126 @@
+{% extends 'calculator/base.html' %}
+
+{% block title %}
+<title>Water Intake Calculator - Healthify Fitness Club</title>
+{% endblock title %}
+
+{% block content %}
+<style>
+    body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FEFDED;
+            color: #333;
+        }
+    
+    nav {
+            background-color: #A1C398;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+    nav a {
+            color: #FEFDED;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+    nav a:hover {
+            color: #FA7070;
+        }
+
+    h1 {
+            color: #FA7070;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+    .container {
+        max-width: 300px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        margin-top: 10px;
+        display: block;
+    }
+
+    input,
+    select,
+    button {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #C6EBC5;
+        border-radius: 4px;
+        box-sizing: border-box;
+        /* Added to include padding in width */
+    }
+
+    input[type="submit"],
+    button {
+        background-color: #FA7070;
+        color: #FEFDED;
+        font-weight: bold;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover,
+    button:hover {
+        background-color: #C6EBC5;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-top: 20px;
+    }
+
+    p {
+        text-align: center;
+    }
+</style>
+
+<h1>Calculate Your Water Intake</h1>
+
+<div class="container">
+    
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if recommended_water_intake %}
+    <p>Recommended daily water intake: {{ recommended_water_intake }} liters</p>
+    {% else %}
+    <p>Enter your details to calculate the recommended daily water intake.</p>
+    {% endif %}
+</div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

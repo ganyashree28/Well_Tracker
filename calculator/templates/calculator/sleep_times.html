@@ -1,0 +1,16 @@
+<!-- templates/calculator/sleep_times.html -->
+{% extends 'calculator/base.html' %}
+
+{% block content %}
+<!-- sleep_times.html -->
+<p>If you want to wake up at {{ desired_wakeup_time }}, you could try going to sleep at:</p>
+<ul>
+    {% for time in sleep_times %}
+    <li>{{ time }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'sleep_calculator' %}">Calculate again</a>
+
+{% endblock %}
+

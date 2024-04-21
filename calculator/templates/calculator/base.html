@@ -1,0 +1,31 @@
+<!-- base.html located in calculator/templates/calculator/ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block title %}<title>Healthify Fitness Club</title>{% endblock %}
+    <style>
+        /* Your styles here */
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'page1' %}">Body Fat</a>
+        <a href="{% url 'water_intake' %}">Water Intake</a>
+        <a href="{% url 'product_search %'}">Product search</a>
+        <a href="{% url 'sleep_calculator' %}">Sleep Calculator</a>
+        
+    </nav>
+
+    {% block content %}
+    <!-- The overridden content from child templates will go here -->
+    {% endblock %}
+
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
+</body>
+
+</html>

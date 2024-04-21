@@ -1,0 +1,231 @@
+
+
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <title>Body Fat Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FEFDED;
+            color: #333;
+        }
+
+        nav {
+            background-color: #A1C398;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #FEFDED;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FA7070;
+        }
+
+        h1 {
+            color: #FA7070;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            margin-top: 10px;
+            display: block;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #bde3b3;
+            border-radius: 4px;
+            box-sizing: border-box;
+            /* Added to include padding in width */
+        }
+
+        button {
+            background-color: #FA7070;
+            color: #FEFDED;
+            font-weight: bold;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #C6EBC5;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #FEFDED;
+            box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .left-container {
+            padding: 40px;
+            max-width: 500px;
+            background: #FA7070;
+        }
+
+        .right-container {
+            max-width: 500px;
+            max-height: 500px;
+            overflow: hidden;
+        }
+
+        .right-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ffefef;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #9b68bc;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #93bc68;
+        }
+
+        .testimonials-container {
+            text-align: center;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .testimonial {
+            display: inline-block;
+            background: #ffffff;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            min-width: 250px; /* Adjust this according to your layout */
+            vertical-align: top;
+        }
+
+        .testimonial h3 {
+            color: #555;
+            font-size: 1.2em;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: #777;
+        }
+
+        .testimonial .rating {
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+    </style>
+    </head>
+    
+    <body>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/page1/">Body Fat</a>
+            <a href="/water_intake/">Water Intake</a>
+            <a href="/product_search/">Product search</a>
+            <a href="/sleep_calculator/">Sleep Cycle</a>
+            <a href="/signup/">SignUp</a>
+            <a href="/login/">Login</a>
+        
+        
+        
+        </nav>
+    
+        <div class="container">
+            <div class="left-container">
+                <h1>Stay Healthy With Us</h1>
+                <p>Track and manage your health with our comprehensive tools. Get insights into your body fat percentage,
+                    daily water intake, Food product recommendations and Sleep Cycle Trackers</p>
+                <a href="/signup/" class="btn">Get Started</a>
+            </div>
+            <div class="right-container">
+                <img src="https://i.pinimg.com/564x/4a/8a/80/4a8a803c4e1a350caf8766ab63f131c4.jpg" alt="Health Illustration">
+            </div>
+        </div>
+
+        <section class="testimonials-container">
+            <h2>See Why Others Think WellTracker Is The Best Health Management Software</h2>
+            <article class="testimonial">
+                <div class="rating">★★★★☆</div>
+                <p>"WellTracker solves a lot of problems - we're very happy. Very customisable. Great customer support from the
+                    onset."</p>
+                <h3>Andy MacKellar, Ships Physio</h3>
+            </article>
+            <article class="testimonial">
+                <div class="rating">★★★★★</div>
+                <p>"It saves us lots of time in generating reminders and invoices for clients. It's great for our business and
+                    reasonable..."</p>
+                <h3>Amy Clift, Play on Words Speech Pathology</h3>
+            </article>
+            <article class="testimonial">
+                <div class="rating">★★★★★</div>
+                <p>"Best decision! It's been a godsend using such a fabulous electronic diary and management software. It's so
+                    easy to use."</p>
+                <h3>Judy Burzacott, Remedial Massage Therapist</h3>
+            </article>
+        </section>
+
+    
+    </body>
+    
+    </html>
+    </style>
+
+
