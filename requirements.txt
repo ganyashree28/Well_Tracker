@@ -24,9 +24,6 @@ gunicorn==21.2.0
 idna==2.10
 invoke==2.2.0
 jmespath==1.0.1
-mysql==0.0.3
-mysql-connector-python==8.2.0
-mysqlclient==2.2.0
 numpy==1.20.3
 packaging==23.2
 pandas==1.2.4
@@ -37,7 +34,6 @@ platformdirs==3.11.0
 playsound==1.2.2
 prettytable==3.9.0
 protobuf==4.21.12
-psycopg2==2.9.9
 pycodestyle==2.11.0
 pycparser==2.21
 PyNaCl==1.5.0
