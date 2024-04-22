@@ -3,6 +3,13 @@
 
 {% block content %}
 <!-- sleep_times.html -->
+<nav>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'page1' %}">Body Fat</a>
+    <a href="{% url 'water_intake' %}">Water Intake</a>
+    <a href="{% url 'product_search' %}">Product Search</a>
+    <a href="{% url 'sleep_calculator' %}">Sleep Calculator</a>
+</nav>
 <p>If you want to wake up at {{ desired_wakeup_time }}, you could try going to sleep at:</p>
 <ul>
     {% for time in sleep_times %}
