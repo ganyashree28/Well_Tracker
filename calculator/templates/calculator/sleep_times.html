@@ -1,17 +1,73 @@
-<!-- templates/calculator/sleep_times.html -->
 {% extends 'calculator/base.html' %}
 
 {% block content %}
 <!-- sleep_times.html -->
 
-<p>If you want to wake up at {{ desired_wakeup_time }}, you could try going to sleep at:</p>
-<ul>
-    {% for time in sleep_times %}
-    <li>{{ time }}</li>
-    {% endfor %}
-</ul>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #FEFDED;
+        color: #333;
+    }
 
-<a href="{% url 'sleep_calculator' %}">Calculate again</a>
+    nav {
+        background-color: #A1C398;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    nav a {
+        color: #FEFDED;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #FA7070;
+    }
+
+    .container {
+        max-width: 300px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .button {
+            background-color: #FA7070;
+            color: #FEFDED;
+            font-weight: bold;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+    .button:hover {
+            background-color: #C6EBC5;
+        }
+
+    /* ... rest of your styles ... */
+</style>
+
+
+
+<div class="container">
+    <h2>Optimal Sleep Times</h2>
+    <p>If you want to wake up at {{ desired_wakeup_time }}, you could try going to sleep at:</p>
+    <ul>
+        {% for time in sleep_times %}
+        <li>{{ time }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'sleep_calculator' %}" class="button">Calculate again</a>
+</div>
 
 {% endblock %}
-
